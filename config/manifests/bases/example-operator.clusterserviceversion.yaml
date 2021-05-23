@@ -1,0 +1,48 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: example-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Examplecr is the Schema for the examplecrs API
+      displayName: Examplecr
+      kind: Examplecr
+      name: examplecrs.examples.example.com
+      version: v1alpha1
+  description: itroyano example operator
+  displayName: Example Operator
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: false
+    type: OwnNamespace
+  - supported: false
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - example-operator
+  links:
+  - name: Example Operator
+    url: https://example-operator.domain
+  maintainers:
+  - email: itroyano@redhat.com
+    name: igor
+  maturity: alpha
+  provider:
+    name: itroyano
+    url: quay.io/itroyano/example-operator
+  version: 0.0.0

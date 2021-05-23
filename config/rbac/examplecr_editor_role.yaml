@@ -1,0 +1,24 @@
+# permissions for end users to edit examplecrs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: examplecr-editor-role
+rules:
+- apiGroups:
+  - examples.example.com
+  resources:
+  - examplecrs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - examples.example.com
+  resources:
+  - examplecrs/status
+  verbs:
+  - get

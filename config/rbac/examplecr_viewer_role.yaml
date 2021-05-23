@@ -1,0 +1,20 @@
+# permissions for end users to view examplecrs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: examplecr-viewer-role
+rules:
+- apiGroups:
+  - examples.example.com
+  resources:
+  - examplecrs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - examples.example.com
+  resources:
+  - examplecrs/status
+  verbs:
+  - get
