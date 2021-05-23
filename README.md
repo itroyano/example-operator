@@ -1,11 +1,14 @@
 ## Example Operator built from Operator SDK
 
 Docker Image Location quay.io/itroyano/example-operator
+
 OLM Bundle Image Location quay.io/itroyano/example-operator-bundle
+
 Reference https://sdk.operatorframework.io/docs/building-operators/golang/tutorial/
 
 ### Commands List
 
+```
 mkdir -p $HOME/projects/example-operator
 cd projects/example-operator
 operator-sdk init --domain example.com --repo github.com/itroyano/example-operator --skip-go-version-check
@@ -21,10 +24,11 @@ DO OLM CHANGES
 
 make bundle
 make bundle-build bundle-push
-
+```
 ### Running Locally
-
+```
 kind create cluster
 operator-sdk olm install
 operator-sdk run bundle quay.io/itroyano/example-operator-bundle:v0.0.1
 kubectl create -f config/samples/examples_v1alpha1_examplecr.yaml
+```
